@@ -21,7 +21,10 @@ import { AuthModule } from './main/auth/auth.module';
 import { UserInfoModule } from './main/user-info/user-info.module';
 import { ConnectionsModule } from './main/connections/connections.module';
 
-
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { APP_BASE_HREF } from '@angular/common';
 const appRoutes: Routes = [
     {
         path      : '**',
@@ -59,10 +62,17 @@ const appRoutes: Routes = [
         LayoutModule,
         AuthModule,
         UserInfoModule,
-        ConnectionsModule
+        ConnectionsModule,
+
+         // firebase
+         AngularFireModule.initializeApp(environment.firebaseConfig),
+         AngularFireDatabaseModule
     ],
     bootstrap   : [
         AppComponent
+    ],
+    providers: [
+        { provide: APP_BASE_HREF, useValue: '/ng7/' },
     ]
 })
 export class AppModule
