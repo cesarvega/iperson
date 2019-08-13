@@ -24,6 +24,8 @@ import { ConnectionsModule } from './main/connections/connections.module';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
 import { APP_BASE_HREF } from '@angular/common';
 const appRoutes: Routes = [
     {
@@ -66,7 +68,8 @@ const appRoutes: Routes = [
 
          // firebase
          AngularFireModule.initializeApp(environment.firebaseConfig),
-         AngularFireDatabaseModule
+         AngularFireDatabaseModule,
+         AngularFireAuthModule
     ],
     bootstrap   : [
         AppComponent

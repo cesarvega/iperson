@@ -12,6 +12,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { AuthGuard } from '../services/auth/auth.guard';
 
 const routes = [
     {
@@ -46,11 +48,13 @@ const routes = [
         MatInputModule,
 
 
-        FuseSharedModule
+        FuseSharedModule,
+        
     ],
     exports     : [
         LoginComponent
-    ]
+    ],
+    providers: [AngularFirestore, AuthGuard]
 })
 
 export class AuthModule { }

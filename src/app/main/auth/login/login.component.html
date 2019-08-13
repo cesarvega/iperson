@@ -56,7 +56,7 @@
                 <span class="text">OR</span>
             </div>
 
-            <button mat-raised-button class="google">
+            <button mat-raised-button (click)="signin()" class="google">
                 Log in with Google
             </button>
 
@@ -66,10 +66,21 @@
 
             <div class="register" fxLayout="column" fxLayoutAlign="center center">
                 <span class="text">Don't have an account?</span>
-                <a class="link" [routerLink]="'/pages/auth/register'">Create an account</a>
+                <a class="link" [routerLink]="'/register'">Create an account</a>
             </div>
 
         </div>
+
+        <div *ngIf="auth.user$ | async as user ; else login">
+           ,<pre> {{user | json }}</pre>
+            <hr>
+            <button (click)="auth.signOut()">Sign Out</button>
+        </div>
+
+        <ng-template #login>
+            <button class="button" (click)="auth.googleSignin()">Google Login</button>
+            <button class="button" (click)="auth.facebookSignin()">FaceBook Login</button>
+        </ng-template>
 
     </div>
 

@@ -6,20 +6,24 @@ import { FuseSharedModule } from '@fuse/shared.module';
 import { ProfileComponent } from './profile/profile.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
+import { AuthGuard } from '../services/auth/auth.guard';
 
 
 const routes = [
   {
     path: 'profile',
-    component: ProfileComponent
+    component: ProfileComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'password',
-    component: ChangePasswordComponent
+    component: ChangePasswordComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'news',
-    component: NewsletterComponent
+    component: NewsletterComponent,
+    canActivate: [AuthGuard]
   },
 ];
 

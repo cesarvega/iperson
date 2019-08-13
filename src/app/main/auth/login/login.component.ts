@@ -9,12 +9,14 @@ import { fuseAnimations } from '@fuse/animations';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
 
+import { AuthService } from '../../services/auth/auth.service'
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
-  animations: fuseAnimations
+  animations: fuseAnimations,
 })
 export class LoginComponent implements OnInit {
 
@@ -24,7 +26,8 @@ export class LoginComponent implements OnInit {
     private _fuseConfigService: FuseConfigService,
     private _fuseTranslationLoaderService: FuseTranslationLoaderService,
     private _formBuilder: FormBuilder,
-    public afAuth: AngularFireAuth
+    public auth: AuthService
+    // public afAuth: AngularFireAuth
   ) {
     this._fuseTranslationLoaderService.loadTranslations(english, turkish);
     // Configure the layout
@@ -61,24 +64,17 @@ export class LoginComponent implements OnInit {
   }
 
 
-  login(): void {
-    this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
-  }
-  logout(): void {
-    this.afAuth.auth.signOut();
-  }
+  // login(): void {
+  //   this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+  // }
+  // logout(): void {
+  //   this.afAuth.auth.signOut();
+  // }
 
-  loginData(): void  {
+  signin(): void  {
   
-    // this.afAuth.auth.signInWithEmailAndPassword(this.loginForm.email, document.getElementById('loginPassword').value).then(function (user) {
-    //     console.log(user);
-    //     location.href = 'dashboard.html';
-    // }).catch(function (e) {
-
-    //     alert(e.message);
-    //     return false;
-    // });
-    // return false;
+    const user = this.auth.googleSignin();
+    const userw = 'this.auth.googleSignin()';
 }
 
 }
