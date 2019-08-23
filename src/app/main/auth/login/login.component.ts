@@ -9,13 +9,13 @@ import { fuseAnimations } from '@fuse/animations';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
 
-import { AuthService } from '../../services/auth/auth.service'
+import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
-  encapsulation: ViewEncapsulation.Emulated,
+  encapsulation: ViewEncapsulation.None,
   animations: fuseAnimations,
 })
 export class LoginComponent implements OnInit {

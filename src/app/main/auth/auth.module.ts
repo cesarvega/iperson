@@ -4,7 +4,7 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { FuseSharedModule } from '@fuse/shared.module';
 import { LoginComponent } from './login/login.component';
-import { RegistrationComponent } from './registration/registration.component';
+import { RegisterComponent } from './registration/registration.component';
 import { RecoverPasswordComponent } from './recover-password/recover-password.component';
 
 import { MatButtonModule } from '@angular/material/button';
@@ -14,16 +14,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AuthGuard } from '../services/auth/auth.guard';
+import { RegisterModule } from './registration/registration.module';
 
 const routes = [
     {
         path     : 'login',
         component: LoginComponent
-    },
-    {
-        path     : 'register',
-        component: RegistrationComponent
-    },
+    },  
     {
         path     : 'recover',
         component: RecoverPasswordComponent
@@ -32,8 +29,7 @@ const routes = [
 
 @NgModule({
     declarations: [
-        LoginComponent,
-        RegistrationComponent,
+        LoginComponent,        
         RecoverPasswordComponent
     ],
     imports     : [
@@ -49,6 +45,7 @@ const routes = [
 
 
         FuseSharedModule,
+        RegisterModule
         
     ],
     exports     : [
