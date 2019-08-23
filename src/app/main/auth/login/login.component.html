@@ -56,11 +56,11 @@
                 <span class="text">OR</span>
             </div>
 
-            <button mat-raised-button (click)="signin()" class="google">
+            <button mat-raised-button (click)="_auth.googleSignin()" class="google">
                 Log in with Google
             </button>
 
-            <button mat-raised-button class="facebook">
+            <button mat-raised-button  (click)="_auth.facebookSignin()" class="facebook">
                 Log in with Facebook
             </button>
 
@@ -76,11 +76,6 @@
             <hr>
             <button (click)="_auth.signOut()">Sign Out</button>
         </div>
-
-        <ng-template #login>
-            <button class="button" (click)="_auth.googleSignin()">Google Login</button>
-            <button class="button" (click)="_auth.facebookSignin()">FaceBook Login</button>
-        </ng-template>
 
     </div>
 

@@ -5,11 +5,11 @@ import { auth } from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 
-import { Observable, of } from 'rxjs'
-import { switchMap } from 'rxjs/operators'
+import { Observable, of } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 
 
-import { User } from '../../auth/login/user.model'
+import { User } from '../../auth/login/user.model';
 import { isError } from 'util';
 
 @Injectable({
@@ -63,7 +63,7 @@ export class AuthService {
       photoURL
     };
 
-    return userRef.set(data, {merge:true})
+    return userRef.set(data, {merge: true});
   }
 
 }

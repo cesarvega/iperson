@@ -14,8 +14,8 @@ import { fuseAnimations } from '@fuse/animations';
 })
 export class PostServiceComponent implements OnInit, OnDestroy
 { 
-    registerForm: FormGroup;
-
+    serviceForm: FormGroup;
+    services;
     // Private
     private _unsubscribeAll: Subject<any>;
 
@@ -55,20 +55,17 @@ export class PostServiceComponent implements OnInit, OnDestroy
      */
     ngOnInit(): void
     {
-        this.registerForm = this._formBuilder.group({
-            name           : ['', Validators.required],
-            email          : ['', [Validators.required, Validators.email]],
-            password       : ['', Validators.required],
-            passwordConfirm: ['', [Validators.required, confirmPasswordValidator]]
+        this.serviceForm = this._formBuilder.group({
+            Title           : ['', Validators.required],
+            Description     : ['', Validators.required],
+            Price     : ['', Validators.required],           
+            Location     : ['', Validators.required],
+            Range     : ['', Validators.required],
+            Friends     : ['', Validators.required],
+            Zipcode     : ['', Validators.required]
         });
 
-        // Update the validity of the 'passwordConfirm' field
-        // when the 'password' field changes
-        this.registerForm.get('password').valueChanges
-            .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe(() => {
-                this.registerForm.get('passwordConfirm').updateValueAndValidity();
-            });
+        this.services = ['service 1', 'service 2', 'service 3', 'service 4'];
     }
 
     /**
@@ -80,38 +77,16 @@ export class PostServiceComponent implements OnInit, OnDestroy
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
     }
+    
+    formatLabel(value: number | null) {
+        if (!value) {
+          return 0;
+        }
+    
+        if (value >= 1000) {
+          return Math.round(value / 1000) + 'k';
+        }
+    
+        return value;
+      }
 }
-
-/**
- * Confirm password validator
- *
- * @param {AbstractControl} control
- * @returns {ValidationErrors | null}
- */
-export const confirmPasswordValidator: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
-
-    if ( !control.parent || !control )
-    {
-        return null;
-    }
-
-    const password = control.parent.get('password');
-    const passwordConfirm = control.parent.get('passwordConfirm');
-
-    if ( !password || !passwordConfirm )
-    {
-        return null;
-    }
-
-    if ( passwordConfirm.value === '' )
-    {
-        return null;
-    }
-
-    if ( password.value === passwordConfirm.value )
-    {
-        return null;
-    }
-
-    return {passwordsNotMatching: true};
-};
