@@ -6,6 +6,11 @@ import { FuseSharedModule } from '@fuse/shared.module';
 import { PostServiceComponent } from './post-service/post-service.component';
 import { ConnectedComponent } from './connected/connected.component';
 import { WallComponent } from './wall/wall.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 
 
 const routes = [
@@ -29,6 +34,11 @@ const routes = [
     RouterModule.forChild(routes),
 
     TranslateModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
 
     FuseSharedModule
   ],
