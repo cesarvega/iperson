@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     private _fuseConfigService: FuseConfigService,
     private _fuseTranslationLoaderService: FuseTranslationLoaderService,
     private _formBuilder: FormBuilder,
-    public auth: AuthService
+    public _auth: AuthService
     // public afAuth: AngularFireAuth
   ) {
     this._fuseTranslationLoaderService.loadTranslations(english, turkish);
@@ -73,7 +73,7 @@ export class LoginComponent implements OnInit {
 
   signin(): void  {
   
-    const user = this.auth.googleSignin();
+    const user = this._auth.googleSignin();
     const userw = 'this.auth.googleSignin()';
 }
 

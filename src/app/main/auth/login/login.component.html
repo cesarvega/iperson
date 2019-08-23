@@ -71,15 +71,15 @@
 
         </div>
 
-        <div *ngIf="auth.user$ | async as user ; else login">
+        <div *ngIf="_auth.user$ | async as user ; else login">
            ,<pre> {{user | json }}</pre>
             <hr>
-            <button (click)="auth.signOut()">Sign Out</button>
+            <button (click)="_auth.signOut()">Sign Out</button>
         </div>
 
         <ng-template #login>
-            <button class="button" (click)="auth.googleSignin()">Google Login</button>
-            <button class="button" (click)="auth.facebookSignin()">FaceBook Login</button>
+            <button class="button" (click)="_auth.googleSignin()">Google Login</button>
+            <button class="button" (click)="_auth.facebookSignin()">FaceBook Login</button>
         </ng-template>
 
     </div>

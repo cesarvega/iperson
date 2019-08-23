@@ -12,4 +12,14 @@ export class RegistrationComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSubmit(value){
+    // this.firebaseService.createUser(value, this.avatarLink)
+    // .then(
+    //   res => {
+    //     this.resetFields();
+    //     this.router.navigate(['/home']);
+    //   }
+    // )
+  }
+
 }
