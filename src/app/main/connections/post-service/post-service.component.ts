@@ -28,16 +28,16 @@ export class PostServiceComponent implements OnInit, OnDestroy
         this._fuseConfigService.config = {
             layout: {
                 navbar   : {
-                    hidden: false
+                    hidden: true
                 },
                 toolbar  : {
-                    hidden: false
+                    hidden: true
                 },
                 footer   : {
-                    hidden: false
+                    hidden: true
                 },
                 sidepanel: {
-                    hidden: false
+                    hidden: true
                 }
             }
         };
