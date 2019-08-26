@@ -8,7 +8,7 @@ import { fuseAnimations } from '@fuse/animations';
 @Component({
     selector     : 'register',
     templateUrl  : './registration.component.html',
-    styleUrls    : ['./registration.component.scss'],
+    styleUrls    : ['./registration.component.scss'], 
     encapsulation: ViewEncapsulation.None,
     animations   : fuseAnimations
 })

@@ -11,6 +11,10 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import {MatRadioModule} from '@angular/material/radio';
+import { PostListComponent } from './post-service/post-list/post-list.component';
+
 
 const routes = [
   {
@@ -28,7 +32,11 @@ const routes = [
 ];
 
 @NgModule({
-  declarations: [PostServiceComponent, ConnectedComponent, WallComponent],
+  declarations: [
+    PostServiceComponent,
+    ConnectedComponent,
+    WallComponent,
+    PostListComponent],
   imports: [
     RouterModule.forChild(routes),
 
@@ -38,6 +46,9 @@ const routes = [
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
+    MatSelectModule,
+    MatRadioModule,
+
 
     FuseSharedModule
   ],
