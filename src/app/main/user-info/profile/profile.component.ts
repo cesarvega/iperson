@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 import { Validators } from '@angular/forms';
 import { FieldConfig2 } from '../../dynamic-profile/field.interface';
@@ -7,7 +7,9 @@ import { fuseAnimations } from '@fuse/animations';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss']
+  styleUrls: ['./profile.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+  animations: fuseAnimations
 })
 export class ProfileComponent implements OnInit {
   constructor(private _fuseConfigService: FuseConfigService, ) {
