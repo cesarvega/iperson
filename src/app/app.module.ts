@@ -27,6 +27,8 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { APP_BASE_HREF } from '@angular/common';
+import { DynamicProfileModule } from './main/dynamic-profile/dynamic-profile.module';
+import { ToastrModule } from 'ngx-toastr';
 const appRoutes: Routes = [
     {
         path      : '**',
@@ -43,7 +45,7 @@ const appRoutes: Routes = [
         BrowserAnimationsModule,
         HttpClientModule,
         RouterModule.forRoot(appRoutes),
-
+        ToastrModule.forRoot(),
         TranslateModule.forRoot(),
 
         // Material moment date module
@@ -69,7 +71,8 @@ const appRoutes: Routes = [
          // firebase
          AngularFireModule.initializeApp(environment.firebaseConfig),
          AngularFireDatabaseModule,
-         AngularFireAuthModule
+         AngularFireAuthModule,
+         DynamicProfileModule
     ],
     bootstrap   : [
         AppComponent

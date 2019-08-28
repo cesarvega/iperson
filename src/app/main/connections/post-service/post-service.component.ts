@@ -7,17 +7,17 @@ import { FuseConfigService } from '@fuse/services/config.service';
 import { fuseAnimations } from '@fuse/animations';
 import { PostService } from './post.service';
 @Component({
-  selector: 'app-post-service',
-  templateUrl: './post-service.component.html',
-  styleUrls: ['./post-service.component.scss'],
-  encapsulation: ViewEncapsulation.Emulated,
-  animations   : fuseAnimations
+    selector: 'app-post-service',
+    templateUrl: './post-service.component.html',
+    styleUrls: ['./post-service.component.scss'],
+    encapsulation: ViewEncapsulation.Emulated,
+    animations: fuseAnimations
 })
-export class PostServiceComponent implements OnInit, OnDestroy
-{ 
-    
-    
+export class PostServiceComponent implements OnInit, OnDestroy {
+
+
     serviceForm: FormGroup;
+    serviceList;
     services;
     // Private
     private _unsubscribeAll: Subject<any>;
@@ -26,18 +26,17 @@ export class PostServiceComponent implements OnInit, OnDestroy
         private _fuseConfigService: FuseConfigService,
         private _formBuilder: FormBuilder,
         private _PostService: PostService
-    )
-    {
+    ) {
         // Configure the layout
         this._fuseConfigService.config = {
             layout: {
-                navbar   : {
+                navbar: {
                     hidden: true
                 },
-                toolbar  : {
+                toolbar: {
                     hidden: true
                 },
-                footer   : {
+                footer: {
                     hidden: true
                 },
                 sidepanel: {
@@ -57,48 +56,48 @@ export class PostServiceComponent implements OnInit, OnDestroy
     /**
      * On init
      */
-    ngOnInit(): void
-    {
+    ngOnInit(): void {
         this.serviceForm = this._formBuilder.group({
-            Title           : ['', Validators.required],
-            Description     : ['', Validators.required],
-            Price     : ['', Validators.required],           
-            Location     : ['', Validators.required],
-            Range     : [],
-            Friends     : ['', Validators.required],
-            Zipcode     : ['', Validators.required]
+            Title: ['', Validators.required],
+            Description: ['', Validators.required],
+            Price: ['', Validators.required],
+            Location: ['', Validators.required],
+            Range: [],
+            Friends: ['', Validators.required],
+            Zipcode: ['', Validators.required]
         });
 
-        this.services = ['service 1', 'service 2', 'service 3', 'service 4'];
+        this.serviceList = ['service 1', 'service 2', 'service 3', 'service 4'];
+
+        this._PostService.GetService().subscribe(res => {
+            this.services = res.map(e => {
+                return {
+                    id: e.payload.doc.id,
+                    ...e.payload.doc.data()
+                } as object;
+            });
+            console.log(this.services);
+        });
     }
 
     /**
      * On destroy
      */
-    ngOnDestroy(): void
-    {
-        // Unsubscribe from all subscriptions
+    ngOnDestroy(): void {
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
     }
 
-
-    onSubmit(): void
-    {
-       console.log(this.serviceForm.value);
-       this._PostService.createService(this.serviceForm.value);
-       
+    onSubmit(): void {
+        this._PostService.createService(this.serviceForm.value);
     }
-    
-    formatLabel(value: number | null) {
-        if (!value) {
-          return 0;
-        }
-    
-        if (value >= 1000) {
-          return Math.round(value / 1000) + 'k';
-        }
-    
-        return value;
-      }
+
+    removeService(serviceId): void {
+        this._PostService.removeService(serviceId);
+    }
+
+    updateService(service): void {
+        this._PostService.removeService(service);
+    }
+
 }

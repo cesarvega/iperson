@@ -16,7 +16,7 @@
                 <mat-form-field appearance="outline">
                     <mat-label>Service Type</mat-label>
                     <mat-select formControlName="Title">
-                        <mat-option *ngFor="let service of services" [value]="service">
+                        <mat-option *ngFor="let service of serviceList" [value]="service">
                           {{service}}
                         </mat-option>
                       </mat-select>
@@ -92,11 +92,12 @@
 
             </form>
 
-            <!-- <div class="service" fxLayout="column" fxLayoutAlign="center center">
-                <span class="text">Already have an account?</span>
-                <a class="link" [routerLink]="'/pages/auth/login'">Login</a>
-            </div> -->
-
+            <ul class="collection">
+                <li *ngFor="let service of services">
+                    <span class="col s11"> {{ service.Title }} </span>
+                    <a class="col s1" (click)="removeService(service.id)">x</a>
+                </li>
+            </ul>
         </div>
 
     </div>

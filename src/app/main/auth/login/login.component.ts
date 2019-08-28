@@ -49,32 +49,10 @@ export class LoginComponent implements OnInit {
     };
   }
 
-  // -----------------------------------------------------------------------------------------------------
-  // @ Lifecycle hooks
-  // -----------------------------------------------------------------------------------------------------
-
-  /**
-   * On init
-   */
   ngOnInit(): void {
     this.loginForm = this._formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
     });
   }
-
-
-  // login(): void {
-  //   this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
-  // }
-  // logout(): void {
-  //   this.afAuth.auth.signOut();
-  // }
-
-  signin(): void  {
-  
-    const user = this._auth.googleSignin();
-    const userw = 'this.auth.googleSignin()';
-}
-
 }
