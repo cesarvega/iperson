@@ -78,7 +78,7 @@ const appRoutes: Routes = [
         AppComponent
     ],
     providers: [
-        { provide: APP_BASE_HREF, useValue: '/ng7/' },
+        { provide: APP_BASE_HREF, useValue: '/iperson/' },
     ]
 })
 export class AppModule

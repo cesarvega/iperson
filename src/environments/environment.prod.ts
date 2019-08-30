@@ -1,13 +1,14 @@
 
 export const environment = {
-    production: false,
+    production: true,
     hmr: false,
     firebaseConfig: {
-        apiKey: 'AIzaSyAJydRALr2w3cn3Ew3xtpI9lHUy4LHzn2c',
-        authDomain: 'fire-6e216.firebaseapp.com',
-        databaseURL: 'https://fire-6e216.firebaseio.com/',
-        projectId: 'fire-6e216',
-        storageBucket: 'fire-6e216.appspot.com',
-        messagingSenderId: ''
-    }
-}
+        apiKey: 'AIzaSyChjtCnHL7-1wwl6qA_UIOsUmsDliNI488',
+        authDomain: 'iperson.firebaseapp.com',
+        databaseURL: 'https://iperson.firebaseio.com',
+        projectId: 'iperson',
+        storageBucket: 'iperson.appspot.com',
+        messagingSenderId: '134922150695',
+        appId: '1:134922150695:web:a23451de258b2068'
+      }
+};

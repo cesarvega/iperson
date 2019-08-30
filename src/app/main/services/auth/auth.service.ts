@@ -11,6 +11,7 @@ import { switchMap } from 'rxjs/operators';
 
 import { User } from '../../auth/login/user.model';
 import { isError } from 'util';
+import { promise } from 'protractor';
 
 @Injectable({
   providedIn: 'root'
@@ -33,28 +34,28 @@ export class AuthService {
           return of(null);
         }
       })
-    )
+    );
 
   }
 
-  async googleSignin(){
+  async googleSignin(): Promise<any>{
     const provider = new auth.GoogleAuthProvider();
     const credential = await this.afAuth.auth.signInWithPopup(provider);
     return this.updateUserData(credential.user);
   }
-  async facebookSignin(){
+  async facebookSignin(): Promise<any>{
     const provider = new auth.FacebookAuthProvider();
     const credential = await this.afAuth.auth.signInWithPopup(provider);
     return this.updateUserData(credential.user);
   }
   
-  async signOut(){
+  async signOut(): Promise<any>{
     await this.afAuth.auth.signOut();
-    return this.router.navigate(['/login'])
+    return this.router.navigate(['/login']);
   }
 
-  updateUserData({uid, email, displayName, photoURL}: User) {
-    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${uid}`)
+  updateUserData({uid, email, displayName, photoURL}: User){
+    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${uid}`);
 
     const data = {
       uid,
@@ -62,8 +63,12 @@ export class AuthService {
       displayName,
       photoURL
     };
+    userRef.set(data, {merge: true});
+    return data;
+  }
 
-    return userRef.set(data, {merge: true});
+  getuser(): Observable<User>{
+    return this.user$;
   }
 
 }

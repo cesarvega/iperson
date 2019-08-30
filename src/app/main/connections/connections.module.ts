@@ -14,20 +14,24 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
 import { PostListComponent } from './post-service/post-list/post-list.component';
+import { AuthGuard } from '../services/auth/auth.guard';
 
 
 const routes = [
   {
     path: 'service',
-    component: PostServiceComponent
+    component: PostServiceComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'connected',
-    component: ConnectedComponent
+    component: ConnectedComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'wall',
-    component: WallComponent
+    component: WallComponent,
+    canActivate: [AuthGuard]
   },
 ];
 

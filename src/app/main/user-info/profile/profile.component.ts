@@ -12,7 +12,9 @@ import { fuseAnimations } from '@fuse/animations';
   animations: fuseAnimations
 })
 export class ProfileComponent implements OnInit {
-  constructor(private _fuseConfigService: FuseConfigService, ) {
+  constructor(
+     private _fuseConfigService: FuseConfigService
+     ) {
     // Configure the layout
     this._fuseConfigService.config = {
       layout: {
@@ -33,162 +35,364 @@ export class ProfileComponent implements OnInit {
   }
   questions: FieldConfig2[] = [
     {
-      labelValue: 'upload-file *',
+      labelValue: 'First name *',
       icon: '',
       defaultInputValue: '',
-      componentType: 'false',
+      componentType: 'bi-input-text',
       options: [''],
       disabled: 'false',
       componentId: '0',
       sortOrder: '0',
       tooltip: '',
       placeHolder: 'Enter your First Name',
-      type: 'file',
-      label: 'Upload Excell With rationales and Word parts',
-      name: 'upload-file *',
-      value: '',
-      inputType: 'file',
-      // validations: [
-      //   {
-      //     name: 'required',
-      //     validator: Validators.required,
-      //     message: 'please enter first name'
-      //   }
-      // ]
-    },
-    {
-
-
-      icon: '',
-      defaultInputValue: '',
-      componentType: 'false',
-      options: [''],
-      disabled: 'false',
-      componentId: '0',
-      sortOrder: '0',
-      tooltip: '',
-      placeHolder: 'Enter or paste Recraft Names',
       type: 'input',
-      label: 'Recraft Names',
-      name: 'Recraft Names',
-      value: '',
-      inputType: 'text'
-    },
-    {
-      labelValue: 'Min Letters',
-      icon: '',
-      defaultInputValue: '',
-      componentType: 'false',
-      options: [''],
-      disabled: 'false',
-      componentId: '0',
-      sortOrder: '0',
-      tooltip: '',
-      placeHolder: 'Enter number',
-      type: 'input',
-      label: 'Min Letters',
-      name: 'Min Letters',
-      value: '',
-      inputType: 'number',
+      label: 'First name *',
+      name: 'First name *',
+      value: 'sss',
+      inputType: 'text',
       validations: [
         {
           name: 'required',
           validator: Validators.required,
-          message: 'please enter last name'
+          message: 'Must enter first name'
         }
       ]
     },
+    // {
+    //   labelValue: 'LABEL',
+    //   icon: '',
+    //   defaultInputValue: '',
+    //   componentType: 'bi-input-text',
+    //   options: [''],
+    //   disabled: 'false',
+    //   componentId: '0',
+    //   sortOrder: '0',
+    //   tooltip: '',
+    //   placeHolder: 'Enter your First Name',
+    //   type: 'label',
+    //   label: 'LABEL',
+    //   name: 'LABEL',
+    //   value: '',
+    //   inputType: 'text',
+    // },
     {
-      labelValue: 'Max Letters',
+      labelValue: 'Middle name',
       icon: '',
       defaultInputValue: '',
-      componentType: 'false',
+      componentType: 'bi-input-text',
       options: [''],
       disabled: 'false',
       componentId: '0',
       sortOrder: '0',
       tooltip: '',
-      placeHolder: 'Enter number',
+      placeHolder: 'Enter your Middle Name (Optional)',
       type: 'input',
-      label: 'Max Letters',
-      name: 'Max Letters',
-      value: '',
-      inputType: 'number',
+      label: 'Middle name',
+      name: 'Middle name',
+      value: 'hello',
+      inputType: 'text',
       validations: [
         {
           name: 'required',
           validator: Validators.required,
-          message: 'please enter last name'
+          message: 'Service time is required'
         }
       ]
     },
     {
-      labelValue: 'Different Lenght',
-      icon: 'sql',
-      defaultInputValue: '',
-      componentType: 'bi-select',
+      labelValue: 'Last name *',
+      icon: '',
+      defaultInputValue: 'hello',
+      componentType: 'bi-input-text',
+      options: [''],
       disabled: 'false',
       componentId: '0',
       sortOrder: '0',
       tooltip: '',
-      placeHolder: 'Different Lenght',
-      type: 'checkbox',
-      label: 'Different Lenght',
-      name: 'Different Lenght',
-      value: '',
-      inputType: 'bi-select',
-
+      placeHolder: 'Enter your Last Name',
+      type: 'input',
+      label: 'Last name *',
+      name: 'Last name *',
+      value: 'hello',
+      inputType: 'text',
+      validations: [
+        {
+          name: 'required',
+          validator: Validators.required,
+          message: 'Must enter last name'
+        }
+      ]
     },
     {
-      labelValue: 'Different Prefix',
-      icon: 'sql',
+      labelValue: 'Gender *',
+      icon: '',
       defaultInputValue: '',
-      componentType: 'bi-select',
+      componentType: 'bi-input-radio',
+      options: [
+        'Female',
+        'Male'
+      ],
       disabled: 'false',
       componentId: '0',
       sortOrder: '0',
       tooltip: '',
-      placeHolder: 'Different Prefix',
-      type: 'checkbox',
-      label: 'Different Prefix',
-      name: 'Different Prefix',
+      placeHolder: '',
+      type: 'radiobutton',
+      label: 'Gender *',
+      name: 'Gender *',
       value: '',
-      inputType: 'bi-select',
-
+      inputType: 'bi-input-radio',
+      validations: [
+        {
+          name: 'required',
+          validator: Validators.required,
+          message: 'Select your Gender is required'
+        }
+      ]
     },
     {
-      labelValue: 'Different Suffix',
-      icon: 'sql',
-      defaultInputValue: '',
-      componentType: 'bi-select',
+      labelValue: 'Date of birth *',
+      icon: '',
+      defaultInputValue: '1999-06-15',
+      componentType: 'bi-input-date',
       disabled: 'false',
       componentId: '0',
       sortOrder: '0',
       tooltip: '',
-      placeHolder: 'Different Suffix',
-      type: 'checkbox',
-      label: 'Different Suffix',
-      name: 'Different Suffix',
-      value: '',
-      inputType: 'bi-select',
-
+      placeHolder: '',
+      type: 'input',
+      label: 'Date of birth *',
+      name: 'Date of birth *',
+      value: 'hello',
+      inputType: 'date',
+      validations: [
+        {
+          name: 'required',
+          validator: Validators.required,
+          message: 'Must enter your date of birth is required'
+        }
+      ]
     },
     {
-      labelValue: 'Different Letter / Letter Position',
+      labelValue: 'Select country of residency *',
       icon: 'sql',
       defaultInputValue: '',
       componentType: 'bi-select',
+      options: ['Colombia', 'Espania', 'E.U'],
       disabled: 'false',
       componentId: '0',
       sortOrder: '0',
       tooltip: '',
-      placeHolder: 'Different Letter / Letter Position',
-      type: 'checkbox',
-      label: 'Different Letter / Letter Position',
-      name: 'Different Letter / Letter Position',
+      placeHolder: 'Select Country',
+      type: 'select',
+      label: 'Select country of residency *',
+      name: 'Select country of residency *',
       value: '',
       inputType: 'bi-select',
+      validations: [
+        {
+          name: 'required',
+          validator: Validators.required,
+          message: 'Select your country of residency'
+        }
+      ]
+    }, {
+      labelValue: 'Mailing street address 1 *',
+      icon: '',
+      defaultInputValue: 'hello',
+      componentType: 'bi-input-text',
+      options: [''],
+      disabled: 'false',
+      componentId: '0',
+      sortOrder: '0',
+      tooltip: '',
+      placeHolder: 'Address 1',
+      type: 'input',
+      label: 'Mailing street address 1 *',
+      name: 'Mailing street address 1 *',
+      value: 'hello',
+      inputType: 'text',
+      validations: [
+        {
+          name: 'required',
+          validator: Validators.required,
+          message: 'Please provide Mailing Address'
+        }
+      ]
+    }, {
+      labelValue: 'Mailing street address 2',
+      icon: '',
+      defaultInputValue: 'hello',
+      componentType: 'bi-input-text',
+      options: [''],
+      disabled: 'false',
+      componentId: '0',
+      sortOrder: '0',
+      tooltip: '',
+      placeHolder: 'Address 2',
+      type: 'input',
+      label: 'Mailing street address 2',
+      name: 'Mailing street address 2',
+      value: 'hello',
+      inputType: 'text',
+      validations: [
+        {
+          name: 'required',
+          validator: Validators.required,
+          message: 'Service time is required'
+        }
+      ]
+    }, {
+      labelValue: 'Select State/Province *',
+      icon: 'sql',
+      defaultInputValue: '',
+      componentType: 'bi-select-input',
+      options: [
+        'Catalunia',
+        'Valle',
+        'California'
 
+      ],
+      disabled: 'false',
+      componentId: '0',
+      sortOrder: '0',
+      tooltip: '',
+      placeHolder: 'State/Province',
+      type: 'select',
+      label: 'Select State/Province *',
+      name: 'Select State/Province *',
+      value: '',
+      inputType: '',
+      validations: [
+        {
+          name: 'required',
+          validator: Validators.required,
+          message: 'Select your state/province of residency'
+        }
+      ]
+    },
+    {
+      labelValue: 'Zip Code *',
+      icon: '',
+      defaultInputValue: 'hello',
+      componentType: 'bi-input-number',
+      options: [''],
+      disabled: 'false',
+      componentId: '0',
+      sortOrder: '0',
+      tooltip: '',
+      placeHolder: 'ZipCode',
+      type: 'input',
+      label: 'Zip Code *',
+      name: 'Zip Code *',
+      value: 'hello',
+      inputType: 'text',
+      validations: [
+        {
+          name: 'required',
+          validator: Validators.required,
+          message: 'zip code is required'
+        }
+      ]
+    },
+    {
+      labelValue: 'Cell Phone',
+      icon: '',
+      defaultInputValue: 'hello',
+      componentType: 'bi-input-text',
+      options: [''],
+      disabled: 'false',
+      componentId: '0',
+      sortOrder: '0',
+      tooltip: 'U.S./Canada can be used to receive our survey texts',
+      placeHolder: 'Enter your Cell Phone Number',
+      type: 'input',
+      label: 'Cell Phone',
+      name: 'Cell Phone',
+      value: 'hello',
+      inputType: 'text',
+      validations: [
+        {
+          name: 'required',
+          validator: Validators.required,
+          message: 'Service time is required'
+        }
+      ]
+    },
+    {
+      labelValue: 'Specify your profession or occupation in order to continue',
+      icon: '',
+      defaultInputValue: '',
+      componentType: 'bi-dropdown',
+      options: [
+        {
+          'names': 'Not related to Health Care',
+          'values': 'NonHCP'
+        },
+        {
+          'names': 'Physician/Doctor of Medicine (MD, DO)',
+          'values': 'MD_PA_lic_Info'
+        },
+        {
+          'names': 'Physician Assistant (PA)',
+          'values': 'MD_PA_lic_Info'
+        },
+        {
+          'names': 'Nurse',
+          'values': 'Nurse_Lic_Info'
+        },
+        {
+          'names': 'Pharmacist',
+          'values': 'Pharm_Lic_Info'
+        },
+        {
+          'names': 'Pharmacist Technician',
+          'values': 'Pharm_Lic_Info'
+        },
+        {
+          'names': 'Dentist',
+          'values': 'OTHER_HCP'
+        },
+        {
+          'names': 'Optometrist',
+          'values': 'OTHER_HCP'
+        },
+        {
+          'names': 'Veterinarian',
+          'values': 'OTHER_HCP'
+        },
+        {
+          'names': 'Allied Health Care Profession or Occupation',
+          'values': 'OTHER_HCP'
+        },
+        'Not related to Health Care',
+        'Physician/Doctor of Medicine (MD, DO)',
+        'Physician Assistant (PA)',
+        'Nurse',
+        'Pharmacist',
+        'Pharmacist Technician',
+        'Dentist',
+        'Optometrist',
+        'Veterinarian',
+        'Allied Health Care Profession or Occupation'
+      ],
+      disabled: 'false',
+      componentId: '0',
+      sortOrder: '0',
+      tooltip: '',
+      placeHolder: 'Select Profession/Occupation',
+      type: 'select',
+      label: 'Specify your profession or occupation in order to continue',
+      name: 'Specify your profession or occupation in order to continue',
+      value: '',
+      inputType: '',
+      validations: [
+        {
+          name: 'required',
+          validator: Validators.required,
+          message: 'Profession is required'
+        }
+      ]
     }
   ];
 
@@ -204,7 +408,6 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     setTimeout(() => { window.dispatchEvent(new Event('resize')); }, 20);
-
   }
 
 }
