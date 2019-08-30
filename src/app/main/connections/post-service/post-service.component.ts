@@ -71,10 +71,20 @@ export class PostServiceComponent implements OnInit, OnDestroy {
 
         this._PostService.GetService().subscribe(res => {
             this.services = res.map(e => {
+                if (e.payload.doc.data().uid !== '') {
+                    
+                }
                 return {
                     id: e.payload.doc.id,
                     ...e.payload.doc.data()
                 } as object;
+            });
+
+            this.services = this.services.filter(serv => {
+                if (serv.uid !== '4bJQEUv2mBdr5HfQlha1qMDjXJR2') {
+                    return serv;
+                }
+               
             });
             console.log(this.services);
         });

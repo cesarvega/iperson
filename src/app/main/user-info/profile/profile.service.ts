@@ -9,8 +9,6 @@ import { AuthService } from 'app/main/services/auth/auth.service';
 export class ProfileService {
 
   profile$: Observable<any>;
-  user$: Observable<any>;
-  pictURL;
 
   constructor(
     private firestore: AngularFirestore,
@@ -19,7 +17,7 @@ export class ProfileService {
 
   createprofile(profile): Observable<any> {
     if (!this.profile$) {
-      this.user$.subscribe(user => {
+      this._auth.getuser().subscribe(user => {
         this.firestore.collection('profiles', ref => ref.where('uid', '==', user.uid))
           .snapshotChanges()
           .subscribe(profileExist => {
