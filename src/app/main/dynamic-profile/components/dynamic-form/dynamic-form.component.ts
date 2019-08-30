@@ -41,7 +41,7 @@ export class DynamicFormComponent implements OnInit {
       console.log(this.form.value);
       //  to process profile updates 
       if (this.form.value['First name *']) {        
-        // this._ProfileService.update(this.form.value);
+        this._ProfileService.update(this.form.value);
       }
       // to process service updates 
       if (this.form.value['Title']) {

@@ -72,11 +72,7 @@ export class LoginComponent implements OnInit {
   }
   login(userData): void {
     if (userData) {      
-      localStorage.setItem('user', userData);
-      this._ProfileService.createprofile(userData).then(res => {
-        console.log(res);
-        
-      });
+      this._ProfileService.createprofile(userData);
       this.router.navigateByUrl('/profile');
     } 
     else

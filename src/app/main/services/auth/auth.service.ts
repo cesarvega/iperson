@@ -19,6 +19,7 @@ import { promise } from 'protractor';
 export class AuthService {
 
   user$: Observable<User>;
+ 
 
   constructor(
     private afAuth: AngularFireAuth,
@@ -71,4 +72,6 @@ export class AuthService {
     return this.user$;
   }
 
+
+ 
 }
