@@ -399,7 +399,7 @@ export class ProfileComponent implements OnInit {
   fieldData2 = [
     {
       item: this.questions,
-      name: 'Creative Name Rules'
+      name: 'Edit your profile'
     }
 
   ];

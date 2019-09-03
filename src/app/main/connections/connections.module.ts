@@ -15,12 +15,17 @@ import { MatSelectModule } from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
 import { PostListComponent } from './post-service/post-list/post-list.component';
 import { AuthGuard } from '../services/auth/auth.guard';
-
+import { MatButtonToggle } from '@angular/material/button-toggle';
 
 const routes = [
   {
     path: 'service',
     component: PostServiceComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'serviceList',
+    component: PostListComponent,
     canActivate: [AuthGuard]
   },
   {
@@ -52,7 +57,6 @@ const routes = [
     MatInputModule,
     MatSelectModule,
     MatRadioModule,
-
 
     FuseSharedModule
   ],
