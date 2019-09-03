@@ -1,16 +1,12 @@
 
 
 @import "src/@fuse/scss/fuse";
-
-    #post{
-        background-color: red;
-    }
-    #register {
+    #service-list {
         width: 100%;
         background: url('/assets/images/backgrounds/dark-material-bg.jpg') no-repeat;
         background-size: cover;
 
-        #register-form-wrapper {
+        #service-list-form-wrapper {
             flex: 1 0 auto;
             padding: 32px;
 
@@ -18,7 +14,7 @@
                 padding: 16px;
             }
 
-            #register-form {
+            #service-list-form {
                 width: 384px;
                 max-width: 384px;
                 padding: 32px;
@@ -73,7 +69,7 @@
                     }
                 }
 
-                .register {
+                .service-list {
                     margin: 32px auto 24px auto;
                     font-weight: 600;
 

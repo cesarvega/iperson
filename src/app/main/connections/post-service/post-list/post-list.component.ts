@@ -10,10 +10,10 @@ import { PostService } from '../post.service';
 })
 export class PostListComponent implements OnInit {
   services;
-  user = 'Cesar Vega';
-  title = 'Cesar will hungout with you for $40';
+  user = 'charles';
+  title = 'charles will hungout with you for $40';
   description = 'I will hungout with you for 1 hour and teach you programming, how to socialize and make new friends';
-  rating = ['start','start','start','star_half','start_border'];
+  rating = ['start', 'start', 'start', 'star_half', 'start_border'];
   postTime = '20 mins. ago';
   constructor(
     private _fuseConfigService: FuseConfigService,
@@ -50,12 +50,12 @@ export class PostListComponent implements OnInit {
         } as object;
       });
 
-      this.services = this.services.filter(serv => {
-        if (serv.uid !== '4bJQEUv2mBdr5HfQlha1qMDjXJR2') {
-          return serv;
-        }
+      // this.services = this.services.filter(serv => {
+      //   if (serv.uid !== '4bJQEUv2mBdr5HfQlha1qMDjXJR2') {
+      //     return serv;
+      //   }
 
-      });
+      // });
       console.log(this.services);
     });
   }

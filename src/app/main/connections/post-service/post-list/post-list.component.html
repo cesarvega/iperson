@@ -1,43 +1,47 @@
 <div id="service-list" fxLayout="column">
-    <div id="service-list-form-wrapper" fxLayout="column" fxLayoutAlign="start start">
+    <div id="service-list-form-wrapper" fxLayout.xs="column" fxLayout.gt.md="row" fxLayoutAlign="start center">
         <div *ngFor="let service of services">
-            <div class="fuse-card">
-                <div>
-                    <div  class="p-16" fxLayout="row" fxLayoutAlign="start start">
-                        <img class="w-40 h-40 border-radius-100" src="assets/images/avatars/carl.jpg">
-                        <div class="pl-16" fxLayout="column" fxLayoutAlign="start start">
-                        <div class="text-bold">{{user}}</div>
-                        <div class="h5 text-bold secondary-text">{{postTime}}</div>
-                    </div>
-                    </div>
-                </div>
-                <img src="assets/images/cards/card2.jpg">
-                <div class="p-16">
-                    <div class="h1">{{title}}</div>
-                    <div class="h5 secondary-text" fxLayout="row" fxLayoutAlign="start start">
-                        <div *ngFor="let rate of rating" ngfor>
-                            <mat-icon class="s-16 amber-fg">{{rate}}</mat-icon>
+            <div class="p-16">
+                <div class="fuse-card">
+                    <div>
+                        <div class="p-16" fxLayout="row" fxLayoutAlign="start start">
+                            <img class="w-40 h-40 border-radius-100" src="assets/images/avatars/carl.jpg">
+                            <div class="pl-16" fxLayout="column" fxLayoutAlign="start start">
+                                <div class="text-bold">{{user}}</div>
+                                <div class="h5 text-bold secondary-text">{{postTime}}</div>
+                            </div>
                         </div>
-                        <div class="ml-8 secondary-text">4.7</div>
-                        <div class="ml-4 secondary-text">(51)</div>
                     </div>
-                </div>
-                <div class="px-12 line-height-1">
-                    {{description}}
-                </div>
-                <div class="card-divider"></div>
-                <div class="p-16 pt-0 line-height-1.75">
-                    <div class="mb-16 text-bold">Tonight's Availability</div>
-                    <div fxLayout="row" fxLayoutAlign="start center">
-                        <mat-icon class="mr-16">access_time</mat-icon>
+                    <img src="assets/images/cards/card2.jpg">
+                    <div class="p-16">
+                        <div class="h1">{{title}}</div>
+                        <div class="h5 secondary-text" fxLayout="row" fxLayoutAlign="start start">
+                            <div *ngFor="let rate of rating" ngfor>
+                                <mat-icon class="s-16 amber-fg">{{rate}}</mat-icon>
+                            </div>
+                            <div class="ml-8 secondary-text">4.7</div>
+                            <div class="ml-4 secondary-text">(51)</div>
+                        </div>
+                    </div>
+                    <div class="px-12 line-height-1">
+                        {{description}}
+                    </div>
+                    <div class="card-divider"></div>
+                    <div class="p-16 pt-0 line-height-1.75">
+                        <div class="mb-16 text-bold">Tonight's Availability</div>
+                        <div fxLayout="row" fxLayoutAlign="start center">
+                            <mat-icon class="mr-16">access_time</mat-icon>
 
+                        </div>
                     </div>
-                </div>
-                <div class="p-8 pt-0" fxLayout="row" fxLayoutAlign="start center">
-                    <button mat-button color="accent">EDIT</button>
+                    <div class="p-8 pt-0" fxLayout="row" fxLayoutAlign="start center">
+                        <button mat-button color="accent">EDIT</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div fxLayout="row" class="p-32" fxLayoutAlign="end end"><button mat-fab color="accent">Add +</button></div>
+    <div fxLayout="row" class="p-32" fxLayoutAlign="end end">
+        <button mat-fab color="accent"[routerLink]="['/service']" routerLinkActive="router-link-active"  >Add +</button>
+    </div>
 </div>

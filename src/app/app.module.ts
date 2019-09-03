@@ -29,6 +29,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { APP_BASE_HREF } from '@angular/common';
 import { DynamicProfileModule } from './main/dynamic-profile/dynamic-profile.module';
 import { ToastrModule } from 'ngx-toastr';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 const appRoutes: Routes = [
     {
         path      : '**',
@@ -70,6 +71,7 @@ const appRoutes: Routes = [
 
          // firebase
          AngularFireModule.initializeApp(environment.firebaseConfig),
+         AngularFirestoreModule,
          AngularFireDatabaseModule,
          AngularFireAuthModule,
          DynamicProfileModule
