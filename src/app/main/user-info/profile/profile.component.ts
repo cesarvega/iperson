@@ -13,8 +13,8 @@ import { fuseAnimations } from '@fuse/animations';
 })
 export class ProfileComponent implements OnInit {
   constructor(
-     private _fuseConfigService: FuseConfigService
-     ) {
+    private _fuseConfigService: FuseConfigService
+  ) {
     // Configure the layout
     this._fuseConfigService.config = {
       layout: {
@@ -58,23 +58,6 @@ export class ProfileComponent implements OnInit {
         }
       ]
     },
-    // {
-    //   labelValue: 'LABEL',
-    //   icon: '',
-    //   defaultInputValue: '',
-    //   componentType: 'bi-input-text',
-    //   options: [''],
-    //   disabled: 'false',
-    //   componentId: '0',
-    //   sortOrder: '0',
-    //   tooltip: '',
-    //   placeHolder: 'Enter your First Name',
-    //   type: 'label',
-    //   label: 'LABEL',
-    //   name: 'LABEL',
-    //   value: '',
-    //   inputType: 'text',
-    // },
     {
       labelValue: 'Middle name',
       icon: '',
@@ -318,6 +301,23 @@ export class ProfileComponent implements OnInit {
           message: 'Service time is required'
         }
       ]
+    },
+    {
+      labelValue: 'LABEL',
+      icon: '',
+      defaultInputValue: '',
+      componentType: 'bi-input-text',
+      options: [''],
+      disabled: 'false',
+      componentId: '0',
+      sortOrder: '0',
+      tooltip: '',
+      placeHolder: '',
+      type: 'label',
+      label: 'Community Info',
+      name: 'Community Info',
+      value: '',
+      inputType: 'text',
     },
     {
       labelValue: 'Specify your profession or occupation in order to continue',

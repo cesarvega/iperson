@@ -109,5 +109,8 @@ export class PostServiceComponent implements OnInit, OnDestroy {
     updateService(service): void {
         this._PostService.removeService(service);
     }
+    delete(event): void {
+      
+    }
 
 }

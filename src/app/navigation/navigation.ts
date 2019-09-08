@@ -7,7 +7,20 @@ export const navigation: FuseNavigation[] = [
         translate: 'NAV.APPLICATIONS',
         type: 'group',
         children: [
+           
            {
+                id: 'Wall',
+                title: 'My Wall',
+                type: 'item',
+                icon: 'money',
+                url: '/wall',
+                badge: {
+                    title: '50',
+                    bg: 'blue',
+                    fg: '#FFFFFF'
+                }
+            } ,
+            {
                 id: 'service',
                 title: 'My services',
                 type: 'item',
@@ -19,18 +32,6 @@ export const navigation: FuseNavigation[] = [
                     fg: '#FFFFFF'
                 }
             }
-            , {
-                id: 'Wall',
-                title: 'My Wall',
-                type: 'item',
-                icon: 'money',
-                url: '/wall',
-                badge: {
-                    title: '50',
-                    bg: 'blue',
-                    fg: '#FFFFFF'
-                }
-            } 
             , {
                 id: 'profile',
                 title: 'My profile',
